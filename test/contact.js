@@ -5,7 +5,7 @@ let Contact = require('../app/models/contact');
 //Require the dev-dependencies
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let server = require('../app/index.js');
+let server = require('../app/index');
 let should = chai.should();
 
 chai.use(chaiHttp);
