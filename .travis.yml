@@ -17,9 +17,9 @@ script:
 deploy:
    provider: elasticbeanstalk
    access_key_id:
-      secure: "$ACCESSKEYID"
+      secure: $ACCESSKEYID
    secret_access_key:
-      secure: "$SECRETACCESSKEY"
+      secure: $SECRETACCESSKEY
    region: "ap-southeast-1"
    app: "OTOT-B2-app"
    env: "OTOT-B2-environment"
