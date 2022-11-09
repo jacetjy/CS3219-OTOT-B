@@ -16,4 +16,5 @@ script:
   - echo 'Installing dependencies'
   - npm install
   - echo 'Running tests'
+  - cd app
   - npm test
