@@ -12,9 +12,5 @@ addons:
    chrome: stable
 
 script:
-  - echo ******build starts******
-  - echo 'Installing dependencies'
-  - npm install
-  - echo 'Running tests'
   - cd app
   - npm test
