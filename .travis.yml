@@ -9,3 +9,10 @@ before_install:
 addons:
    firefox: latest
    chrome: stable
+
+script:
+  - echo ******build starts******
+  - echo 'Installing dependencies'
+  - npm install
+  - echo 'Running tests'
+  - mocha
