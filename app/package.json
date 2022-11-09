@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha --timeout 2000 --exit"
+    "test": "mocha contact.js --timeout 20000 --exit"
   },
   "keywords": [
     "api",
