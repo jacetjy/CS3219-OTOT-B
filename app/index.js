@@ -12,9 +12,6 @@ let app = express();
 // use morgan to log at command line
 app.use(morgan('combined'));
 
-// Import routes
-let apiRoutes = require("./api-routes");
-
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -34,10 +31,29 @@ else
 var port = process.env.PORT || 8080;
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('Hello World with Express'));
-// Use Api routes in the App
-app.use('/api', apiRoutes);
+// app.get('/', (req, res) => res.send('Hello World with Express'));
+
+// Set default API response
+app.get('/', function (req, res) {
+    res.json({
+        status: 'API Its Working',
+        message: 'Welcome to RESTHub crafted with love!',
+    });
+});
+// Import contact controller
+let contactController = require('./routes/contact');
+// Contact routes
+app.route('/contacts')
+    .get(contactController.getContacts)
+    .post(contactController.postContact)
+app.route('/contacts/:id')
+    .get(contactController.getContact)
+    .put(contactController.updateContact)
+    .delete(contactController.deleteContact);
+
 // Launch app to listen to specified port
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
+
+module.exports = app;
