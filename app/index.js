@@ -30,14 +30,11 @@ else
 // Setup server port
 var port = process.env.PORT || 8080;
 
-// Send message for default URL
-// app.get('/', (req, res) => res.send('Hello World with Express'));
-
 // Set default API response
 app.get('/', function (req, res) {
     res.json({
         status: 'API Its Working',
-        message: 'Welcome to RESTHub crafted with love!',
+        message: 'Hello World with Express',
     });
 });
 // Import contact controller
