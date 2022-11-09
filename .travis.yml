@@ -1,7 +1,8 @@
 language: node_js
-node_js: "stable"
+node_js:
+  - 17
 
-dist: bionic
+dist: focal
 
 before_install:
    - stty cols 80
