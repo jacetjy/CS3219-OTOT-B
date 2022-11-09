@@ -13,3 +13,14 @@ addons:
 
 script:
   - npm test
+
+deploy:
+   provider: elasticbeanstalk
+   access_key_id:
+      secure: "AKIA5YUFLCY5TUWKWNH5"
+   secret_access_key:
+      secure: "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"
+   region: "ap-southeast-1"
+   app: "OTOT-B2-app"
+   env: "OTOT-B2-environment"
+   bucket_name: "OTOT-B2-S3-bucket"
