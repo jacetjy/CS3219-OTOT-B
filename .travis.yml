@@ -12,5 +12,4 @@ addons:
    chrome: stable
 
 script:
-  - cd app
   - npm test
