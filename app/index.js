@@ -1,5 +1,7 @@
 // Import express
 let express = require('express');
+// Import cors
+const cors = require('cors');
 // Import Body parser
 let bodyParser = require('body-parser');
 // Import Mongoose
@@ -8,9 +10,14 @@ let mongoose = require('mongoose');
 let morgan = require('morgan');
 // Initialise the app
 let app = express();
-
 // use morgan to log at command line
 app.use(morgan('combined'));
+app.use(cors()) // config cors so that front-end can use
+app.options( (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, PATCH, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+}, cors());
 
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
