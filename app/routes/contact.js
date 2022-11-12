@@ -8,9 +8,9 @@ function getContacts(req, res) {
     //Query the DB and if no errors, send all the contacts
     let query = Contact.find({});
     query.exec((err, contacts) => {
-        if(err) res.send(err);
+        if(err) { res.send(err); }
         //If no errors, send them back to the client
-        res.json(contacts);
+        else { res.json(contacts); }
     });
 }
 

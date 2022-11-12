@@ -8,6 +8,7 @@ let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 // Import Morgan
 let morgan = require('morgan');
+require('dotenv').config();
 // Initialise the app
 let app = express();
 // use morgan to log at command line
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb+srv://jace:ttesting123@cluster0.azkss3u.mongodb.net/test', { useNewUrlParser: true});
+mongoose.connect(process.env.DB_CLOUD_URI, { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
